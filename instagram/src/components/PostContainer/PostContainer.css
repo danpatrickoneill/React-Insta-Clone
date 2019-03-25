@@ -3,10 +3,39 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 20px;
+  border: 1px solid gray;
+  margin-bottom: 20px;
+}
+
+.PostContainer img {
+  padding: 0;
+  margin-left: -20px;
+}
+
+.iContainer {
+  font-size: 24px;
+  display: flex;
+}
+
+.iContainer i {
+  margin-right: 10px;
 }
 
 .PostHeader {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
+}
+
+.avatar {
+  max-height: 50px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.username {
+  font-weight: bold;
 }

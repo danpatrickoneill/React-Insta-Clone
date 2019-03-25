@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./CommentSection.css";
 
@@ -8,7 +9,7 @@ const CommentSection = props => {
     <div className="Comment">
       {props.comments.map(comment => (
         <p key={comment.id}>
-          {comment.username} {comment.text}
+          <span className="username">{comment.username}</span> {comment.text}
         </p>
       ))}
       <input
@@ -18,6 +19,16 @@ const CommentSection = props => {
       />
     </div>
   );
+};
+
+CommentSection.propTypes = {
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      username: PropTypes.string,
+      text: PropTypes.string
+    })
+  )
 };
 
 export default CommentSection;
