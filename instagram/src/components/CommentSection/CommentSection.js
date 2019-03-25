@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 
 import "./CommentSection.css";
 
+import Comment from "./Comment";
+
 const CommentSection = props => {
   console.log(props);
   return (
     <div className="Comment">
       {props.comments.map(comment => (
-        <p key={comment.id}>
-          <span className="username">{comment.username}</span> {comment.text}
-        </p>
+        <Comment key={comment.id} comment={comment} />
       ))}
       <input
         className="CommentBar"
