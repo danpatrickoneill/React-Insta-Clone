@@ -12,7 +12,7 @@ const PostContainer = props => {
         <p>{datum.username}</p>
       </header>
       <img src={datum.imageUrl} alt="" />
-      <input type="image" src="" />
+      <i class="far fa-heart" />
       <input type="image" src="" />
       <p>{datum.likes} likes</p>
       <CommentSection comments={datum.comments} />

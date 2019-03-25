@@ -15,17 +15,18 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="SearchContainer">
-        <nav className="SearchNav">
-          <img src="../../../../public/assets/ig-glyph-logo.png" alt="" />
-          <img alt="" />
-          <input
-            className="SearchBar"
-            type="text"
-            placeholder="Search here..."
+        <nav className="SearchNavOne">
+          <i className="fab fa-instagram" />
+          <img
+            src="https://fontmeme.com/images/instagram-new-logo.png"
+            alt="IG logo"
           />
-          <img alt="" />
-          <img alt="" />
-          <img alt="" />
+        </nav>
+        <input className="SearchBar" type="text" placeholder="Search" />
+        <nav className="SearchNavTwo">
+          <i class="far fa-compass" />
+          <i class="far fa-heart" />
+          <i class="far fa-user" />
         </nav>
       </div>
     );
