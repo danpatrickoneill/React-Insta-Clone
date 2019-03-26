@@ -23,6 +23,12 @@ class App extends Component {
     });
   }
 
+  searchPosts = text => {
+    this.setState({
+      data: this.state.data.filter(post => post.username.includes(text))
+    });
+  };
+
   appendComment = (text, id) => {
     const newComment = {
       username: "doneill",
@@ -57,7 +63,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchBar />
+        <SearchBar data={this.state.data} searchPosts={this.searchPosts} />
         <PostContainer
           data={this.state.data}
           appendComment={this.appendComment}

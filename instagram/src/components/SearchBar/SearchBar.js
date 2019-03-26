@@ -5,12 +5,23 @@ import { Button } from "reactstrap";
 import "./SearchBar.css";
 
 class SearchBar extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      input: ""
+      id: props.id,
+      searchText: ""
     };
   }
+
+  handleChanges = event => {
+    let value = event.target.value;
+    this.setState({
+      searchText: value
+    });
+    console.log(this.state);
+    // If this uses value instead of searchText, searches in realtime
+    this.props.searchPosts(value);
+  };
 
   render() {
     return (
@@ -22,7 +33,12 @@ class SearchBar extends React.Component {
             alt="IG logo"
           />
         </nav>
-        <input className="SearchBar" type="text" placeholder="Search" />
+        <input
+          className="SearchBar"
+          type="text"
+          placeholder="Search"
+          onChange={this.handleChanges}
+        />
         <nav className="SearchNavTwo">
           <i className="far fa-compass" />
           <i className="far fa-heart" />
