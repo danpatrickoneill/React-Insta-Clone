@@ -11,4 +11,8 @@ const Comment = props => {
   );
 };
 
+Comment.defaultProps = {
+  username: "doneill"
+};
+
 export default Comment;

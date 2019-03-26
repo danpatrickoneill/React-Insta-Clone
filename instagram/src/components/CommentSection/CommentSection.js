@@ -5,21 +5,61 @@ import "./CommentSection.css";
 
 import Comment from "./Comment";
 
-const CommentSection = props => {
-  console.log(props);
-  return (
-    <div className="Comment">
-      {props.comments.map(comment => (
-        <Comment key={comment.id} comment={comment} />
-      ))}
-      <input
-        className="CommentBar"
-        type="text"
-        placeholder="Add a comment..."
-      />
-    </div>
-  );
-};
+class CommentSection extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      id: props.id,
+      comments: props.comments,
+      commentText: ""
+    };
+  }
+
+  componentDidUpdate() {}
+
+  handleChanges = event => {
+    this.setState({
+      commentText: event.target.value
+    });
+    console.log(this.state);
+  };
+
+  addNewComment = (event, id = this.state.id) => {
+    event.preventDefault();
+    if (!this.state.commentText) {
+      alert("Please enter a comment");
+    } else {
+      console.log("New comment, eh?", this.state.commentText);
+      this.props.appendComment(this.state.commentText, id);
+    }
+    this.clearComment(event);
+  };
+
+  clearComment = event => {
+    event.preventDefault();
+    event.target.reset();
+  };
+
+  render() {
+    console.log(this.state.comments);
+    return (
+      <div className="Comment">
+        {this.props.comments.map(comment => (
+          <Comment key={comment.id} comment={comment} />
+        ))}
+        <form onSubmit={this.addNewComment}>
+          <input
+            onChange={this.handleChanges}
+            className="CommentBar"
+            type="text"
+            placeholder="Add a comment..."
+          />
+        </form>
+      </div>
+    );
+  }
+}
 
 CommentSection.propTypes = {
   comments: PropTypes.arrayOf(

@@ -12,15 +12,45 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: dummyData
+      data: [],
+      commentID: 14
     };
   }
+
+  componentDidMount() {
+    this.setState({
+      data: dummyData
+    });
+  }
+
+  appendComment = (text, id) => {
+    const newComment = {
+      username: "doneill",
+      id: this.state.commentID.toString(),
+      text: text
+    };
+    let newID = this.state.commentID + 1;
+    this.setState({
+      commentID: newID
+    });
+    this.setState({
+      data: this.state.data.map(post => {
+        if (post.id === id) {
+          post.comments.push(newComment);
+        }
+        return post;
+      })
+    });
+  };
 
   render() {
     return (
       <div className="App">
         <SearchBar />
-        <PostContainer data={this.state.data} />
+        <PostContainer
+          data={this.state.data}
+          appendComment={this.appendComment}
+        />
       </div>
     );
   }

@@ -12,13 +12,17 @@ const PostContainer = props => {
         <img className="avatar" src={datum.thumbnailUrl} alt="user avatar" />
         <p className="username">{datum.username}</p>
       </header>
-      <img src={datum.imageUrl} alt="" />
+      <img className="user-image" src={datum.imageUrl} alt="" />
       <div className="iContainer">
         <i className="far fa-heart" />
         <i className="far fa-comment" />
       </div>
       <p style={{ fontWeight: "bold" }}>{datum.likes} likes</p>
-      <CommentSection comments={datum.comments} />
+      <CommentSection
+        id={datum.id}
+        comments={datum.comments}
+        appendComment={props.appendComment}
+      />
       <p>{datum.timestamp}</p>
     </div>
   ));
