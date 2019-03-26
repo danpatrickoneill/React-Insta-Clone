@@ -24,9 +24,15 @@ class App extends Component {
   }
 
   searchPosts = text => {
-    this.setState({
-      data: this.state.data.filter(post => post.username.includes(text))
-    });
+    if (text) {
+      this.setState({
+        data: this.state.data.filter(post => post.username.includes(text))
+      });
+    } else {
+      this.setState({
+        data: dummyData
+      });
+    }
   };
 
   appendComment = (text, id) => {
