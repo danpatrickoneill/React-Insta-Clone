@@ -39,3 +39,7 @@
 .username {
   font-weight: bold;
 }
+
+.fa-heart:hover {
+  color: crimson;
+}
