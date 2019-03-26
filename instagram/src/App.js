@@ -43,6 +43,17 @@ class App extends Component {
     });
   };
 
+  addLike = id => {
+    this.setState({
+      data: this.state.data.map(post => {
+        if (post.id === id) {
+          post.likes += 1;
+        }
+        return post;
+      })
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -50,6 +61,7 @@ class App extends Component {
         <PostContainer
           data={this.state.data}
           appendComment={this.appendComment}
+          addLike={this.addLike}
         />
       </div>
     );

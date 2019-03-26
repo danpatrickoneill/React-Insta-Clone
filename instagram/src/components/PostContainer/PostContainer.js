@@ -14,7 +14,7 @@ const PostContainer = props => {
       </header>
       <img className="user-image" src={datum.imageUrl} alt="" />
       <div className="iContainer">
-        <i className="far fa-heart" />
+        <i className="far fa-heart" onClick={() => props.addLike(datum.id)} />
         <i className="far fa-comment" />
       </div>
       <p style={{ fontWeight: "bold" }}>{datum.likes} likes</p>
