@@ -8,9 +8,10 @@
   margin-bottom: 20px;
 }
 
-.PostContainer .user-image {
+.user-image {
   padding: 0;
   margin-left: -20px;
+  margin-bottom: 10px;
 }
 
 .iContainer {
@@ -20,6 +21,7 @@
 
 .iContainer i {
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .PostHeader {

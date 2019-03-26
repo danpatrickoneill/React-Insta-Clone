@@ -33,3 +33,11 @@
     transform: rotate(360deg);
   }
 }
+
+input {
+  padding-left: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}

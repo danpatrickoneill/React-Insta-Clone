@@ -1,7 +1,12 @@
-.Comment {
+.CommentSection {
   width: 640px;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  text-align: left;
+}
+
+.Comment {
   word-wrap: break-word;
 }

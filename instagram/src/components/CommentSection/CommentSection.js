@@ -44,7 +44,7 @@ class CommentSection extends React.Component {
   render() {
     console.log(this.state.comments);
     return (
-      <div className="Comment">
+      <div className="CommentSection">
         {this.props.comments.map(comment => (
           <Comment key={comment.id} comment={comment} />
         ))}

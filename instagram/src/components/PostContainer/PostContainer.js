@@ -23,7 +23,9 @@ const PostContainer = props => {
         comments={datum.comments}
         appendComment={props.appendComment}
       />
-      <p>{datum.timestamp}</p>
+      <p className="timestamp" style={{ fontSize: "8px" }}>
+        {datum.timestamp}
+      </p>
     </div>
   ));
 };
