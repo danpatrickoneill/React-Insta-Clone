@@ -36,7 +36,6 @@ class PostsPage extends React.Component {
 
   appendComment = (text, id) => {
     const newComment = {
-      username: "doneill",
       id: this.state.commentID.toString(),
       text: text
     };

@@ -5,14 +5,17 @@ import "./CommentSection.css";
 const Comment = props => {
   return (
     <p className="Comment">
-      <span className="username">{props.comment.username}</span>{" "}
+      <span className="username">
+        {props.comment.username || localStorage.getItem("username")}
+      </span>{" "}
       {props.comment.text}
     </p>
   );
 };
 
-Comment.defaultProps = {
-  username: "doneill"
-};
+// Couldn't figure out how to make this work; used OR workaround above
+// Comment.defaultProps = {
+//   username: "doneill"
+// };
 
 export default Comment;
