@@ -39,6 +39,10 @@ class Login extends React.Component {
     return (
       <div className="loginContainer">
         <form className="login" onSubmit={this.login}>
+          <img
+            src="https://fontmeme.com/images/instagram-new-logo.png"
+            alt="IG logo"
+          />
           <input
             className="usernameInput"
             name="username"

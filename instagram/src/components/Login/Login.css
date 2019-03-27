@@ -1,7 +1,18 @@
+.loginContainer {
+  margin: 100px auto;
+  width: 300px;
+  border: #405de6 solid 5px;
+  border-radius: 10px;
+}
+
+.loginContainer img {
+  width: 250px;
+}
+
 .login {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   height: 300px;
 }
@@ -9,4 +20,21 @@
 .login input {
   margin-bottom: 20px;
   width: 200px;
+}
+
+.usernameInput {
+  border: #e1306c solid 2px;
+  border-radius: 10px;
+}
+
+.passwordInput {
+  border: #f56040 solid 2px;
+  border-radius: 10px;
+}
+
+.loginButton {
+  background: #fcaf45;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
 }
