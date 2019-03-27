@@ -21,9 +21,7 @@ class Login extends React.Component {
       alert("Please enter valid password");
     } else {
       localStorage.setItem("username", this.state.username);
-      this.setState({
-        username: this.state.username
-      });
+      localStorage.setItem("password", this.state.password);
     }
   };
 

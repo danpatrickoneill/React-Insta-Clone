@@ -18,7 +18,7 @@ const PostContainer = props => {
         <i className="far fa-comment" />
       </div>
       <p style={{ fontWeight: "bold" }}>{datum.likes} likes</p>
-      <p className="timestamp" style={{ fontSize: "8px" }}>
+      <p className="timestamp" style={{ fontSize: "10px" }}>
         {datum.timestamp}
       </p>
       <CommentSection
