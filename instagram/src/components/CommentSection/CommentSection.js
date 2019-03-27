@@ -39,6 +39,9 @@ class CommentSection extends React.Component {
   clearComment = event => {
     event.preventDefault();
     event.target.reset();
+    this.setState({
+      commentText: ""
+    });
   };
 
   render() {

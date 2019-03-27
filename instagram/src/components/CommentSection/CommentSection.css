@@ -6,3 +6,14 @@
   align-items: flex-start;
   text-align: left;
 }
+
+.CommentBar {
+  width: 600px;
+  border: none;
+  border-top: lightgray 1px solid;
+  padding: 10px 0;
+}
+
+.CommentBar:focus {
+  outline: none;
+}

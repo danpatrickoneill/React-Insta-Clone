@@ -18,14 +18,14 @@ const PostContainer = props => {
         <i className="far fa-comment" />
       </div>
       <p style={{ fontWeight: "bold" }}>{datum.likes} likes</p>
+      <p className="timestamp" style={{ fontSize: "8px" }}>
+        {datum.timestamp}
+      </p>
       <CommentSection
         id={datum.id}
         comments={datum.comments}
         appendComment={props.appendComment}
       />
-      <p className="timestamp" style={{ fontSize: "8px" }}>
-        {datum.timestamp}
-      </p>
     </div>
   ));
 };
