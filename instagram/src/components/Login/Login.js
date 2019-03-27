@@ -13,10 +13,18 @@ class Login extends React.Component {
 
   login = event => {
     console.log("Login attempt start");
-    localStorage.setItem("username", this.state.username);
-    this.setState({
-      username: this.state.username
-    });
+    if (!this.state.username) {
+      event.preventDefault();
+      alert("Please enter valid username");
+    } else if (!this.state.password) {
+      event.preventDefault();
+      alert("Please enter valid password");
+    } else {
+      localStorage.setItem("username", this.state.username);
+      this.setState({
+        username: this.state.username
+      });
+    }
   };
 
   handleChanges = event => {
