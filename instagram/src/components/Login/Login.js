@@ -1,6 +1,46 @@
 import React from "react";
+import styled, { css } from "styled-components";
 
 import "./Login.css";
+
+const LoginContainer = styled.div`
+  margin: 100px auto;
+  width: 300px;
+  border: #405de6 solid 5px;
+  border-radius: 10px;
+`;
+
+const LoginLogo = styled.img`
+  width: 250px;
+`;
+
+const LoginForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+`;
+
+const LoginInput = styled.input`
+  margin-bottom: 20px;
+  width: 200px;
+  border-radius: 10px;
+  background: ${props => props.inputColor};
+  border: ${props => props.inputColor} 5px solid;
+  color: white;
+
+  &::placeholder {
+    color: white;
+  }
+`;
+
+const LoginButton = styled.button`
+  background: #405de6;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+`;
 
 class Login extends React.Component {
   constructor() {
@@ -35,27 +75,27 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="loginContainer">
-        <form className="login" onSubmit={this.login}>
-          <img
+      <LoginContainer>
+        <LoginForm onSubmit={this.login}>
+          <LoginLogo
             src="https://fontmeme.com/images/instagram-new-logo.png"
             alt="IG logo"
           />
-          <input
-            className="usernameInput"
+          <LoginInput
+            inputColor="#e1306c"
             name="username"
             placeholder="Username"
             onChange={this.handleChanges}
           />
-          <input
-            className="passwordInput"
+          <LoginInput
+            inputColor="#fcaf45"
             name="password"
             placeholder="Password"
             onChange={this.handleChanges}
           />
-          <button className="loginButton">Login</button>
-        </form>
-      </div>
+          <LoginButton>Login</LoginButton>
+        </LoginForm>
+      </LoginContainer>
     );
   }
 }
