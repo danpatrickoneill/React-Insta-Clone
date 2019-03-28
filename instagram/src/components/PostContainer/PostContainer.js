@@ -43,11 +43,13 @@ const IconContainer = styled.div`
 const Likes = styled.p`
   padding-left: 20px;
   font-weight: bold;
+  margin-bottom: 8px;
 `;
 
 const Timestamp = styled.p`
   padding-left: 20px;
   font-size: 10px;
+  margin-bottom: 8px;
 `;
 
 const PostContainer = props => {
