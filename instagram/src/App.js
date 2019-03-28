@@ -34,9 +34,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <AppDiv className="App">
         <ComponentFromWithAuthenticate />
-      </div>
+      </AppDiv>
     );
   }
 }
