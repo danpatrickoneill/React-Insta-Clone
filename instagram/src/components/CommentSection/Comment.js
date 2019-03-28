@@ -1,15 +1,19 @@
 import React from "react";
+import styled, { css } from "styled-components";
 
 import "./CommentSection.css";
+import { Username } from "../../styles/reusables";
+
+const CommentText = styled.p``;
 
 const Comment = props => {
   return (
-    <p className="Comment">
-      <span className="username">
+    <CommentText className="Comment">
+      <Username display="inline" fontWeight="600">
         {props.comment.username || localStorage.getItem("username")}
-      </span>{" "}
+      </Username>{" "}
       {props.comment.text}
-    </p>
+    </CommentText>
   );
 };
 

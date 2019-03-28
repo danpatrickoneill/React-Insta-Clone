@@ -1,8 +1,23 @@
 import React from "react";
+import styled, { css } from "styled-components";
 
-import { Button } from "reactstrap";
+// import "./SearchBar.css";
+import { Icon } from "../../styles/reusables";
 
-import "./SearchBar.css";
+const Header = styled.header``;
+
+const InstaNav = styled.nav`
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const InstaLogo = styled.img`
+  max-height: 80px;
+`;
+
+const SearchInput = styled.input``;
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -25,26 +40,23 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="SearchContainer">
-        <nav className="SearchNavOne">
-          <i className="fab fa-instagram" />
-          <img
+      <Header>
+        <InstaNav>
+          <Icon className="fab fa-instagram" />
+          <InstaLogo
             src="https://fontmeme.com/images/instagram-new-logo.png"
             alt="IG logo"
           />
-        </nav>
-        <input
-          className="SearchBar"
-          type="text"
-          placeholder="Search"
-          onChange={this.handleChanges}
-        />
-        <nav className="SearchNavTwo">
-          <i className="far fa-compass" />
-          <i className="far fa-heart" />
-          <i className="far fa-user" />
-        </nav>
-      </div>
+          <SearchInput
+            type="search"
+            placeholder="Search"
+            onChange={this.handleChanges}
+          />
+          <Icon className="far fa-compass" />
+          <Icon className="far fa-heart" />
+          <Icon className="far fa-user" />
+        </InstaNav>
+      </Header>
     );
   }
 }

@@ -1,32 +1,81 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled, { css } from "styled-components";
 
 import "./PostContainer.css";
 import CommentSection from "../CommentSection/CommentSection";
+import { Icon, Username } from "../../styles/reusables";
+
+const PostContainerDiv = styled.div`
+  width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 20px;
+  border: 1px solid lightgray;
+  margin-bottom: 20px;
+`;
+
+const PostHeader = styled.header`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+const UserThumbnail = styled.img`
+  max-height: 50px;
+  border-radius: 50%;
+  padding: 0 20px;
+  margin-bottom: 20px;
+`;
+
+const UserImage = styled.img`
+  width: 100%;
+  margin-bottom: 10px;
+`;
+
+const IconContainer = styled.div`
+  display: flex;
+  margin-left: 20px;
+`;
+
+const Likes = styled.p`
+  padding-left: 20px;
+  font-weight: bold;
+`;
+
+const Timestamp = styled.p`
+  padding-left: 20px;
+  font-size: 10px;
+`;
 
 const PostContainer = props => {
   console.log(props.data);
   return props.data.map(datum => (
-    <div key={datum.id} className="PostContainer">
-      <header className="PostHeader">
-        <img className="avatar" src={datum.thumbnailUrl} alt="user avatar" />
-        <p className="username">{datum.username}</p>
-      </header>
-      <img className="user-image" src={datum.imageUrl} alt="" />
-      <div className="iContainer">
-        <i className="far fa-heart" onClick={() => props.addLike(datum.id)} />
-        <i className="far fa-comment" />
-      </div>
-      <p style={{ fontWeight: "bold" }}>{datum.likes} likes</p>
-      <p className="timestamp" style={{ fontSize: "10px" }}>
-        {datum.timestamp}
-      </p>
+    <PostContainerDiv key={datum.id}>
+      <PostHeader>
+        <UserThumbnail src={datum.thumbnailUrl} alt="user avatar" />
+        <Username>{datum.username}</Username>
+      </PostHeader>
+      <UserImage src={datum.imageUrl} alt="" />
+      <IconContainer>
+        <Icon
+          className="far fa-heart"
+          fontSize="24px"
+          hoverColor="crimson"
+          onClick={() => props.addLike(datum.id)}
+        />
+        <Icon className="far fa-comment" fontSize="24px" />
+      </IconContainer>
+      <Likes>{datum.likes} likes</Likes>
+      <Timestamp>{datum.timestamp}</Timestamp>
       <CommentSection
         id={datum.id}
         comments={datum.comments}
         appendComment={props.appendComment}
       />
-    </div>
+    </PostContainerDiv>
   ));
 };
 
