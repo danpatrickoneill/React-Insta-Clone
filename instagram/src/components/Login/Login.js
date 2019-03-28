@@ -83,12 +83,14 @@ class Login extends React.Component {
           />
           <LoginInput
             inputColor="#e1306c"
+            type="text"
             name="username"
             placeholder="Username"
             onChange={this.handleChanges}
           />
           <LoginInput
             inputColor="#fcaf45"
+            type="password"
             name="password"
             placeholder="Password"
             onChange={this.handleChanges}
